@@ -1,0 +1,91 @@
+# Application configuration
+server:
+  # Server path
+  servlet:
+    context-path: /api/di
+
+# Spring configuration
+spring:
+  # Active profile
+  profiles:
+    active: local
+  banner:
+    location: classpath:/logo/bbraun.txt
+  # Used by Actuator for telemetry
+  jmx:
+    enabled: true
+
+  # Flyway configuration
+#  flyway:
+#    schemas: iomt_dm_di
+#    enabled: true
+#    baseline-on-migrate: true
+#    table: dm_di_schema_version
+
+  # Hibernate configuration
+#  jpa:
+#    properties:
+#      hibernate:
+#        default_schema: iomt_dm_di
+#        jdbc.lob.non_contextual_creation: true
+#        enhancer:
+#          enableDirtyTracking: false
+#          enableLazyInitialization: false
+#    hibernate.ddl-auto: none
+
+# Swagger-UI configurations
+springdoc:
+  api-docs.enabled: false
+  pathsToMatch: /v*/**,/route/**
+  swagger-ui:
+    operationsSorter: alpha
+    path: /swagger-ui.html
+    tagsSorter: alpha
+    properties:
+      title: Device Inventory Service
+      description: API operations in Device Inventory Service
+      wiki-url: https://collaboration.bbraun.com/display/IOMT/DI%3A+Device+Inventory
+      git-url: https://code.bbraun.io/IoMT/iomt-dm-di-be.git
+
+# Actuator configurations
+management:
+  endpoints:
+    # disable all, then enable only the needed ones
+    enabled-by-default: false
+    jmx:
+      exposure:
+        include: "health,info,metrics,env"
+    web:
+      exposure:
+        include: "health"
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+    env:
+      enabled: true
+
+# Application configuration
+#bbraun:
+#  tracing:
+#    application-code: DM-DI
+#  # B.Braun Security Configuration
+#  security:
+#    cors:
+#      headers: content-type, authorization
+#      exposed-headers: x-platform-error-code, Location, Content-Location
+#    ignore:
+#      patterns: /**
+      # (when auth) patterns: /v3/api-docs/**, /swagger-ui/**, /swagger-ui.html, /actuator/**, /route/**
+# Application log level configuration
+logging:
+  level:
+    #    root: DEBUG
+    org:
+      springframework: ERROR
+    flywaydb.core.internal:
+      database: ERROR
+      license: ERROR

@@ -1,0 +1,5 @@
+# swagger-ui configurations
+springdoc:
+  api-docs.enabled: true
+  swagger-ui:
+    server-url: https://dm-di.iomtdev.bbraun.io/api
