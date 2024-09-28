@@ -11,23 +11,25 @@ springdoc:
     properties:
       title: Device Inventory Service
       description: API operations in DeviceRepository Inventory Service
-      git-url: https://code.bbraun.io/IoMT/iomt-dm-di-be.git
+      git-url: https://github.com/hadzhievv/hackathon-2024
 
 # Spring Datasource Configuration
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/
+    url: jdbc:postgresql://localhost:5433/hackathon
     username: hackathon
     password: 12345
 
   # Flyway script path
-#  flyway:
-#    locations: classpath:db/local_migrations
-#  jpa:
-#    properties:
-#      hibernate:
-#        show_sql: true
-#        format_sql: true
+  flyway:
+    locations: classpath:db/local_migrations
+    enabled: true
+    baseline-on-migrate: true
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
 
 # B.Braun OpenId Connect Configuration
 #bbraun:

@@ -2,7 +2,7 @@
 server:
   # Server path
   servlet:
-    context-path: /api/di
+    context-path: /
 
 # Spring configuration
 spring:
@@ -16,26 +16,26 @@ spring:
     enabled: true
 
   # Flyway configuration
-#  flyway:
-#    schemas: iomt_dm_di
-#    enabled: true
-#    baseline-on-migrate: true
-#    table: dm_di_schema_version
+  flyway:
+    schemas: hackathon_2024
+    enabled: true
+    baseline-on-migrate: true
+    table: hackathon_schema_version
 
   # Hibernate configuration
-#  jpa:
-#    properties:
-#      hibernate:
-#        default_schema: iomt_dm_di
-#        jdbc.lob.non_contextual_creation: true
-#        enhancer:
-#          enableDirtyTracking: false
-#          enableLazyInitialization: false
-#    hibernate.ddl-auto: none
+  jpa:
+    properties:
+      hibernate:
+        default_schema: hackathon_2024
+        jdbc.lob.non_contextual_creation: true
+        enhancer:
+          enableDirtyTracking: false
+          enableLazyInitialization: false
+    hibernate.ddl-auto: none
 
 # Swagger-UI configurations
 springdoc:
-  api-docs.enabled: false
+  api-docs.enabled: true
   pathsToMatch: /v*/**,/route/**
   swagger-ui:
     operationsSorter: alpha
@@ -44,8 +44,7 @@ springdoc:
     properties:
       title: Device Inventory Service
       description: API operations in Device Inventory Service
-      wiki-url: https://collaboration.bbraun.com/display/IOMT/DI%3A+Device+Inventory
-      git-url: https://code.bbraun.io/IoMT/iomt-dm-di-be.git
+      git-url: https://github.com/hadzhievv/hackathon-2024
 
 # Actuator configurations
 management:
@@ -69,17 +68,17 @@ management:
       enabled: true
 
 # Application configuration
-#bbraun:
-#  tracing:
-#    application-code: DM-DI
-#  # B.Braun Security Configuration
-#  security:
-#    cors:
-#      headers: content-type, authorization
-#      exposed-headers: x-platform-error-code, Location, Content-Location
-#    ignore:
-#      patterns: /**
-      # (when auth) patterns: /v3/api-docs/**, /swagger-ui/**, /swagger-ui.html, /actuator/**, /route/**
+bbraun:
+  tracing:
+    application-code: Hackathon-2024
+  # B.Braun Security Configuration
+  security:
+    cors:
+      headers: content-type, authorization
+      exposed-headers: x-platform-error-code, Location, Content-Location
+    ignore:
+      patterns: /**
+
 # Application log level configuration
 logging:
   level:

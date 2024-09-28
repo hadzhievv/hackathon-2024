@@ -1,5 +1,6 @@
-package com.example.hackathon2024;
+package com.example.hackathon2024.controller;
 
+import com.example.hackathon2024.service.HelloWorldService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;

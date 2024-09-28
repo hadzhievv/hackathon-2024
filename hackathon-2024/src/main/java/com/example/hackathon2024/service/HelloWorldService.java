@@ -1,4 +1,4 @@
-package com.example.hackathon2024;
+package com.example.hackathon2024.service;
 
 import org.springframework.stereotype.Service;
 
