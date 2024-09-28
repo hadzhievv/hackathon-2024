@@ -1,9 +1,5 @@
--- V1__initial_setup.sql
-
 CREATE SCHEMA IF NOT EXISTS hackathon_2024;
 
-
--- Create devices table
 CREATE TABLE hackathon_2024.device
 (
     device_id        SERIAL PRIMARY KEY,

@@ -1,4 +1,0 @@
--- -- V2__add_index_to_serial_number.sql
---
--- -- Add an index on the serial_number column
--- CREATE INDEX idx_serial_number ON hackathon_2024.devices(serial_number);
